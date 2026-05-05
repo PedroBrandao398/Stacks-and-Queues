@@ -7,11 +7,19 @@ public class FixedCapacityStackOfStrings {
   }
 
   public boolean isEmpty() {
-    
+    return N == 0;
   }
 
   public int size() {
-    
+    return N;
+  }
+
+  private void resize(int capacity) {
+    String[] copy = new String[capacity];
+    for (int i = 0; i < N; i++) {
+      copy[i] = s[i];
+    }
+    s = copy;
   }
   
   public void push(String item) {
