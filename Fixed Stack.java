@@ -9,6 +9,10 @@ public class FixedCapacityStackOfStrings {
   public boolean isEmpty() {
     return N == 0;
   }
+
+  public int size() {
+    return N;
+  }
   
   public void push(String item) {
     s[N++] = item;
