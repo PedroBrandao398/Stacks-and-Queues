@@ -3,7 +3,7 @@ public class FixedCapacityStackOfStrings {
   private int N = 0;
   
   public FixedCapacityStackOfStrings(int capacity) {
-    
+    s = new String[capacity];
   }
 
   public boolean isEmpty() {
