@@ -1,11 +1,13 @@
 public class FixedArrayQueueOfStrings {
   private String[] q;
   private int first, last;
+  private int N;
 
   public FixedArrayQueueOfStrings(int capacity) {
     q = new String[capacity];
-    first = -1;
-    last = -1;
+    first = 0;
+    last = 0;
+    N = 0;
   }
 
   private int next(int i) {
@@ -13,32 +15,24 @@ public class FixedArrayQueueOfStrings {
   }
   
   public boolean isEmpty() {
-    return first == -1;
+    return N == 0;
   }
   
   public int size() {
-    if(first == -1) {
-      return 0;
-    } else if(first <= last) {
-      return last-first+1;
-    } else {
-      return q.length-first+last+1;
-    }
+    return N;
   }
 
   public void enqueue(String item) {
-    if (size() == q.length) {
+    if (N == q.length) {
       throw new IllegalStateException("Error: Queue overflow ");
     }
-    q[next(last)] = item;
+    q[last] = item;
     last = next(last);
-    if(first == -1) {
-      first=0;
-    }
+    N++;
   }
   
   public String dequeue() {
-    if (first == -1) {
+    if (isEmpty()) {
       throw new IllegalStateException("Error: Queue underflow ");
     }
     String item = q[first];
