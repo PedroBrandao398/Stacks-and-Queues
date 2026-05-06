@@ -34,8 +34,9 @@ public class FixedArrayQueueOfStrings {
   }
   
   public String dequeue() {
-    if (first == -1)
-throw new IllegalStateException("Error: Queue underflow ");
-    
+    if (first == -1) {
+      throw new IllegalStateException("Error: Queue underflow ");
+    }
   }
-  
+
+}
