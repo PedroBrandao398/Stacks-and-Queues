@@ -38,5 +38,4 @@ public class FixedArrayQueueOfStrings {
       throw new IllegalStateException("Error: Queue underflow ");
     }
   }
-
 }
