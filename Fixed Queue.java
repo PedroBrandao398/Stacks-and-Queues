@@ -37,5 +37,14 @@ public class FixedArrayQueueOfStrings {
     if (first == -1) {
       throw new IllegalStateException("Error: Queue underflow ");
     }
+    String item = q[first];
+    q[first] = null;
+    if(first == last) {
+      first = -1;
+      last = -1;
+    } else {
+      first = next(first);
+    }
+    return item;
   }
 }
