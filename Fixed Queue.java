@@ -7,6 +7,10 @@ public class FixedArrayQueueOfStrings {
     first = -1;
     last = -1;
   }
+
+  private int next(int i) {
+    return (i + 1) % q.length;
+  }
   
   public boolean isEmpty() {
     return first == -1;
