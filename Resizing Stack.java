@@ -1,8 +1,8 @@
-public class FixedCapacityStackOfStrings {
+public class ResizingStackOfStrings {
   private String[] s;
   private int N = 0;
   
-  public FixedCapacityStackOfStrings() {
+  public ResizingStackOfStrings() {
     s = new String[2];
   }
 
