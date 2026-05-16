@@ -5,7 +5,7 @@ public class FixedCapacityStackOfStrings {
 
   //Criação de objetos FixedCapacityStackOfStrings
   public FixedCapacityStackOfStrings(int capacity) {
-     //Cria array de tamanho capacity
+    //Cria array de tamanho capacity
     s = new String[capacity];
   }
 
