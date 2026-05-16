@@ -2,8 +2,12 @@ public class FixedArrayQueueOfStrings {
   private String[] q;
   private int first, last;
 
+
+  //Criação de objetos FixedArrayQueueOfStrings
   public FixedArrayQueueOfStrings(int capacity) {
+    //Cria array de tamanho capacity
     q = new String[capacity];
+    //Inicializa first e last
     first = -1;
     last = -1;
   }
@@ -35,23 +39,35 @@ public class FixedArrayQueueOfStrings {
     }
   }
 
+
+  //Adiciona elementos no fim da queue
   public void enqueue(String item) {
+    //Verifica se está cheio
     if (size() == q.length) {
       throw new IllegalStateException("Error: Queue overflow ");
     }
+    //Adiciona no elemento no fim da queue
     q[next(last)] = item;
+    //Atualiza last
     last = next(last);
+    //Se era vazia fist fica no primeira posição 0
     if(first==-1) {
       first=0;
     }
   }
-  
+
+
+  //Remove e retorna elementos do início da queue
   public String dequeue() {
-    if (isEmpty()) {
+    //Verifica se está vazia
+    if (first == -1) {
       throw new IllegalStateException("Error: Queue underflow ");
     }
+    //Guarda o primeiro elemento
     String item = q[first];
+    //Remove o primeiro elemento
     q[first] = null;
+    //Verifica se só tem 1 elemento/atualiza first para seguinte
     if(first == last) {
       first = -1;
       last = -1;
