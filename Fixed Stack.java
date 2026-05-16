@@ -30,7 +30,7 @@ public class FixedCapacityStackOfStrings {
 
   //Remove e retorna o elemento no topo
   public String pop(){
-    //Guarda o topo
+    //Guarda o elemento no topo
     String item = s[--N];
     //Remove o topo
     s[N] = null;
